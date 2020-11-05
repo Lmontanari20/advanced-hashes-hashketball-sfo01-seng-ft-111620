@@ -254,16 +254,32 @@ end
 def winning_team
   # returns the string of the winning team
   team1 = 0
+  team_one = ""
   team2 = 0
+  team_two = ""
   winner = ""
   hash = game_hash
   hash.each { |location, team_hash|
     if team_hash[:team_name] == "Brooklyn Nets"
-      team_hash.each { ||
-        
+      team_hash.each { |key, array|
+        array.each { |player_hash|
+          player_hash[:points] += team1
+          team_one = team_hash[:team_name]
+        }
       }
+    else
+      team_hash.each { |key, array|
+        array.each { |player_hash|
+          player_hash[:points] += team2
+          team_two = team_hash[:team_name]
+        }
+      }
+    end
   }
-  
+  if team1 > team2
+    return team_one
+  end
+  return team_two
 end
 
 def player_with_longest_name
