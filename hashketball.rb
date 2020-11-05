@@ -253,6 +253,14 @@ end
 
 def winning_team
   # returns the string of the winning team
+  team1 = 0
+  team2 = 0
+  winner = ""
+  hash = game_hash
+  hash.each { ||
+  
+  }
+  
 end
 
 def player_with_longest_name
