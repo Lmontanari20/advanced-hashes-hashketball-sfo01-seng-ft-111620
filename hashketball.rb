@@ -232,6 +232,12 @@ end
 
 def most_points_scored
   # returns the player name that has the most points scored
+  most_points = 0
+  hash = game_hash
+  
+  hash.each { ||
+  
+  }
 end
 
 def winning_team
