@@ -302,7 +302,7 @@ def long_name_steals_a_ton?
   name_length = 0
   steals = 0
   name = ""
-   hash.each { |location, team_hash| 
+   ash.each { |location, team_hash| 
     team_hash[:players].each { |player_hash|
       if player_hash[:player_name].length > name_length
         name_length = player_hash[:player_name].length
@@ -311,4 +311,12 @@ def long_name_steals_a_ton?
     }
   }
   
+  hash.each { |location, team_hash| 
+    team_hash[:players].each { |player_hash|
+      if player_hash[:player_name] == name && player_hash[:steals] == steals
+        return true
+      end
+    }
+  }
+  return false
 end
