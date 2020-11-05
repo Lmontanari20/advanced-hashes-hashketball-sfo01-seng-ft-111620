@@ -233,13 +233,22 @@ end
 def most_points_scored
   # returns the player name that has the most points scored
   most_points = 0
+  most_points_name = ""
   hash = game_hash
   
   hash.each { |location, team_hash|
     team_hash.each { |key, value|
-      
+      if key == :players 
+        value.each { |player_hash|
+          if player_hash[:points] > most_points
+            most_points = player_hash[:points]
+            most_points_name = player_hash[:name]
+          end
+        }
+      end
     }
   }
+  most_points_name
 end
 
 def winning_team
