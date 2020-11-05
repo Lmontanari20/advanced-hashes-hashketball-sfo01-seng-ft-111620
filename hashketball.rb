@@ -235,8 +235,10 @@ def most_points_scored
   most_points = 0
   hash = game_hash
   
-  hash.each { ||
-  
+  hash.each { |location, team_hash|
+    team_hash.each { |key, value|
+      
+    }
   }
 end
 
