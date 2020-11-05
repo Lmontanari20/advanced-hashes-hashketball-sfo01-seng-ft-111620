@@ -284,9 +284,31 @@ end
 
 def player_with_longest_name
   # returns name of player with longest name
+  name_length = 0
+  name = ""
+   hash.each { |location, team_hash| 
+    team_hash[:players].each { |player_hash|
+      if player_hash[:player_name].length > name_length
+        name_length = player_hash[:player_name].length
+        name = player_hash[:player_name]
+      end
+    }
+  }
+  name
 end
 
 def long_name_steals_a_ton?
   # returns true if the player with the longest name had the msot steals
+  name_length = 0
+  steals = 0
+  name = ""
+   hash.each { |location, team_hash| 
+    team_hash[:players].each { |player_hash|
+      if player_hash[:player_name].length > name_length
+        name_length = player_hash[:player_name].length
+        name = player_hash[:player_name]
+      end
+    }
+  }
   
 end
