@@ -257,8 +257,8 @@ def winning_team
   team2 = 0
   winner = ""
   hash = game_hash
-  hash.each { ||
-  
+  hash.each { |location, team_hash|
+    if team_hash[:team_name]
   }
   
 end
